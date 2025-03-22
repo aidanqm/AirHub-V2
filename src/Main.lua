@@ -49,10 +49,28 @@ ESP_Settings.LoadConfigOnLaunch = false
 ESP_Settings.Enabled = false
 Crosshair.Enabled = false
 Aimbot_Settings.Enabled = false
+Aimbot_Settings.LockMode = 2 -- Set default to mousemoverel (2)
+Aimbot_Settings.Sensitivity2 = 3.44 -- Set mousemoverel sensitivity to 344/100
 
 local Fonts = {"UI", "System", "Plex", "Monospace"}
 local TracerPositions = {"Bottom", "Center", "Mouse"}
 local HealthBarPositions = {"Top", "Bottom", "Left", "Right"}
+
+--// Queue on Teleport
+local queueScript = [[
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/aidanqm/AirHub-V2/main/src/Main.lua"))()
+]]
+
+pcall(function()
+    if syn and syn.queue_on_teleport then
+        syn.queue_on_teleport(queueScript)
+    elseif queue_on_teleport then
+        queue_on_teleport(queueScript)
+    end
+end)
 
 --// Tabs
 
@@ -288,7 +306,7 @@ AimbotPropertiesSection:Slider({
 AimbotPropertiesSection:Slider({
 	Name = "mousemoverel Sensitivity",
 	Flag = "Aimbot_Sensitivity2",
-	Default = Aimbot_Settings.Sensitivity2 * 100,
+	Default = 344,
 	Min = 0,
 	Max = 500,
 	Callback = function(Value)
@@ -300,7 +318,7 @@ AimbotPropertiesSection:Dropdown({
 	Name = "Lock Mode",
 	Flag = "Aimbot_Settings_LockMode",
 	Content = {"CFrame", "mousemoverel"},
-	Default = Aimbot_Settings.LockMode == 1 and "CFrame" or "mousemoverel",
+	Default = "mousemoverel",
 	Callback = function(Value)
 		Aimbot_Settings.LockMode = Value == "CFrame" and 1 or 2
 	end
