@@ -316,7 +316,7 @@ AimbotPropertiesSection:Slider({
 AimbotPropertiesSection:Slider({
 	Name = "mousemoverel Sensitivity",
 	Flag = "Aimbot_Sensitivity2",
-	Default = 344,
+	Default = 260,
 	Min = 0,
 	Max = 500,
 	Callback = function(Value)
