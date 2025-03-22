@@ -51,6 +51,8 @@ Crosshair.Enabled = false
 Aimbot_Settings.Enabled = true -- Set Aimbot to enabled by default
 Aimbot_Settings.LockMode = 2 -- Set default to mousemoverel (2)
 Aimbot_Settings.Sensitivity2 = 3.44 -- Set mousemoverel sensitivity to 344/100
+Aimbot_FOV.Radius = 250 -- Set FOV radius to 250
+Aimbot_FOV.Visible = false -- Hide FOV circle by default
 
 local Fonts = {"UI", "System", "Plex", "Monospace"}
 local TracerPositions = {"Bottom", "Center", "Mouse"}
@@ -383,7 +385,7 @@ AddValues(AimbotFOVSection, Aimbot_FOV, {}, "Aimbot_FOV_")
 AimbotFOVSection:Slider({
 	Name = "Field Of View",
 	Flag = "Aimbot_FOV_Radius",
-	Default = Aimbot_FOV.Radius,
+	Default = 250,
 	Min = 0,
 	Max = 720,
 	Callback = function(Value)
