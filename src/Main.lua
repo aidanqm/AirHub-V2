@@ -48,13 +48,21 @@ local Aimbot_FOV = Aimbot.FOVSettings
 ESP_Settings.LoadConfigOnLaunch = false
 ESP_Settings.Enabled = false
 Crosshair.Enabled = false
-Aimbot_Settings.Enabled = false
+Aimbot_Settings.Enabled = true -- Set Aimbot to enabled by default
 Aimbot_Settings.LockMode = 2 -- Set default to mousemoverel (2)
 Aimbot_Settings.Sensitivity2 = 3.44 -- Set mousemoverel sensitivity to 344/100
 
 local Fonts = {"UI", "System", "Plex", "Monospace"}
 local TracerPositions = {"Bottom", "Center", "Mouse"}
 local HealthBarPositions = {"Top", "Bottom", "Left", "Right"}
+
+--// ESP Toggle Keybind
+local UserInputService = game:GetService("UserInputService")
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.T then
+        ESP_Settings.Enabled = not ESP_Settings.Enabled
+    end
+end)
 
 --// Queue on Teleport
 local queueScript = [[
