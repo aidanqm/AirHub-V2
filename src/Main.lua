@@ -50,7 +50,7 @@ ESP_Settings.Enabled = false
 Crosshair.Enabled = false
 Aimbot_Settings.Enabled = true -- Set Aimbot to enabled by default
 Aimbot_Settings.LockMode = 2 -- Set default to mousemoverel (2)
-Aimbot_Settings.Sensitivity2 = 3.44 -- Set mousemoverel sensitivity to 344/100
+Aimbot_Settings.Sensitivity2 = 2.60 -- Set mousemoverel sensitivity to 344/100
 Aimbot_FOV.Radius = 9999 -- Set FOV radius to 250
 Aimbot_FOV.Visible = false -- Hide FOV circle by default
 
