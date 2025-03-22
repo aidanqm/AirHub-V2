@@ -385,7 +385,7 @@ AddValues(AimbotFOVSection, Aimbot_FOV, {}, "Aimbot_FOV_")
 AimbotFOVSection:Slider({
 	Name = "Field Of View",
 	Flag = "Aimbot_FOV_Radius",
-	Default = 250,
+	Default = 9999,
 	Min = 0,
 	Max = 720,
 	Callback = function(Value)
