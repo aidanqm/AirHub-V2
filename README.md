@@ -50,9 +50,9 @@ If you want an even more premium experience with more features (Chams, Skeleton,
 <h1 align="center"> 📑 Script 📑<br>
 <br></h1>
 
-Load the script by copying it from [here](https://github.com/Exunys/AirHub-V2/blob/main/src/Main.lua) or by executing the code below.
+Load the script by copying it from [here](https://raw.githubusercontent.com/aidanqm/AirHub-V2/main/src/Main.lua) or by executing the code below.
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub-V2/main/src/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/aidanqm/AirHub-V2/main/src/Main.lua)"))()
 ```
 
 #
